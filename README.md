@@ -2,7 +2,7 @@
 LendingClub - Supervised Learning
 
 ### Summary
-In this challenge, we used different Supervised Machine Learning Algorithms to predict of a loan is considered risky. In total, 4 methods were used: Random Oversampling, SMOTE oversampling, Cluster Centroids undersampling, and SMOTEEN combination sampling.
+In this challenge, we used different Supervised Machine Learning Algorithms to predict if a loan is considered risky. In total, 4 methods were used: Random Oversampling, SMOTE oversampling, Cluster Centroids undersampling, and SMOTEEN combination sampling.
 
 ### Analysis
 In this analysis, we are looking at a few different metrics to judge each prediction method:
@@ -10,7 +10,9 @@ In this analysis, we are looking at a few different metrics to judge each predic
 - Precision: The reliableness of a positive classification
 - Sensitivity: (aka Recall) the measure of of correct identification
 
-In this analysis, precision is not very useful as the difference in classification sizes causes the results to be skewed. The main metric being used is the accuracy and sensitivity of each loan type. In the tables below, the results of each method can be seen, where correct identifications can be seen the the top left and bottom right locations of the array, as well as the precision and sensitivity for the prediction of each loan type.
+In this analysis, precision is not very useful as the difference in classification sizes causes the results to be skewed. The main metrics used are the accuracy and sensitivity stats of each loan type. In the tables below, the results of each method can be seen with their respective metrics. In the array in each section, the results are illustrated as follows:
+  High-Risk [Predicted High/Actually High , Predicted Low / Actually High]
+  Low-Risk  [Predicted High/Actually Low , Predicted Low / Actually Low]
 
 
 #### Random
@@ -55,4 +57,6 @@ The recommendation on which algorithm to use depends on the factors each financi
 
 If the bank views the ability to flag as many high risk loans accurately without regard to the low-risk loans, then the Combination method should be used. The updside is that this method had a high Sensitivity and flagged 3/4 of the high-risk loans. Unfortunately, this sensitivity flagged many low-risk loans as risky, which in-turn would lead to lost work hours investigating false positives.
 
-If the institution views the time value of its employees as important, and believe the time lost investigating false positives is more significant than letting high-risk loans go unidentified, then none of the methods should be used. If one of these methods should be used, then the SMOTE method would be best overall. None of these methods should be used because they are not precise enough. Either half of the risky loans are unflagged, or
+If the institution views the time value of its employees as important, and believe the time lost investigating false positives is more significant than letting high-risk loans go unidentified, hen the SMOTE method would be best overall. This method had a slightly higher than half chance of detecting high-risk loans while correctly detecting 2/3 of the low risk loans.
+
+However, non of these methods should really be used. They do not predict/detect enough of the high risk loans to be much better than a coin flip, while still creating many false positives by flagging many of the low-risk loans as high risk. Financial institutions need a more accurate method to predict high-risk loans so they don't waste many man-hours on chasing false positives while not releasing extra liability into their financial securities.
