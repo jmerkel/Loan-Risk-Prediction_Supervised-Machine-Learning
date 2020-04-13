@@ -1,5 +1,6 @@
-# jmerkel_Module_17
-LendingClub - Supervised Learning
+# LendingClub - Supervised Learning
+### UC Berkeley - jmerkel_Module_17
+
 
 ### Summary
 In this challenge, we used different Supervised Machine Learning Algorithms to predict if a loan is considered risky. In total, 4 methods were used: Random Oversampling, SMOTE oversampling, Cluster Centroids undersampling, and SMOTEEN combination sampling.
@@ -17,39 +18,60 @@ In this analysis, precision is not very useful as the difference in classificati
 
 #### Random
 This method should not be used. In addition to roughly half of the risky loans being picked up, about 2/3 of the low-risk loans were identified.
-array([[   48,    34],
-       [ 6233, 10890]])
-                pre       rec
-high_risk       0.01      0.59
-low_risk        1.00      0.64
+
+|| T | F |
+| --- |--- | --- | 
+| T | 48 | 34 |
+| F | 6233 | 10890 | 
+
+| Risk | Pre | Rec |
+| --- | --- | --- |
+| high_risk | 0.01 | 0.59 | 
+| low_risk | 1.00 | 0.64 |
 
 
 #### SMOTE
 Of the 3 Oversample/Undersample methods, this algorithm works best. However, it should still not be used. Slightly over half of the Risky loans were picked up and about 2/3 of the low-risk loans were flagged correctly.
-array([[   47,    35],
-       [ 5560, 11563]])
-                pre       rec
-high_risk       0.01      0.57
-low_risk        1.00      0.68
+
+|| T | F |
+| --- |--- | --- | 
+| T | 47 | 35 |
+| F | 5560 | 11563 |
+
+
+| Risk | Pre | Rec |
+| --- | --- | --- |
+| high_risk | 0.01 | 0.57 | 
+| low_risk | 1.00 | 0.68 |
 
 
 #### Cluster Centroids
 This method should not be used. In addition to roughly half of the risky loans being picked up, less than half of the low-risk loans were accurately predicted. This makes the classification of each loan no-better than a coin flip (and functionally useless).
 
-array([[  45,   37],
-       [9217, 7906]])
-               pre       rec
-high_risk      0.00      0.55                 
-low_risk       1.00      0.46
+|| T | F |
+| --- |--- | --- | 
+| T | 45 | 37 |
+| F | 9217 | 7906 |
+
+| Risk | Pre | Rec |
+| --- | --- | --- |
+| high_risk | 0.00 | 0.55 | 
+| low_risk | 1.00 | 0.46 |
+
 
 
 #### Combination
 This method may be valuable because it identified 3/4 of the high-risk loans correctly. Unfortunately, by labeling many loans as high-risk, it mistakenly labelled many low-risk loans as risky.
-array([[  61,   21],
-       [7372, 9751]])
-               pre       rec
-high_risk      0.01      0.74
-low_risk       1.00      0.57
+
+|| T | F |
+| --- |--- | --- | 
+| T | 61 | 21 |
+| F | 7372 | 9751 |
+
+| Risk | Pre | Rec |
+| --- | --- | --- |
+| high_risk | 0.01 | 0.74 | 
+| low_risk | 1.00 | 0.57 |
 
 
 ### Recommendation
