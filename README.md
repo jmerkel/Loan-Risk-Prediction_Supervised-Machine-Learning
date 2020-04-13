@@ -1,5 +1,4 @@
 # LendingClub - Supervised Learning
-### UC Berkeley - jmerkel_Module_17
 
 
 ### Summary
